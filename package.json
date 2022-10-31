@@ -1,0 +1,29 @@
+{
+  "name": "user-search",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/bunyan": "^1.8.8",
+    "@types/on-headers": "^1.0.0",
+    "bunyan": "^1.8.15",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "helmet": "^6.0.0",
+    "knex": "^2.3.0",
+    "objection": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.11.8",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tsc": "^2.0.4",
+    "typescript": "^4.8.4"
+  }
+}
