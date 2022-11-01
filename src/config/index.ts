@@ -11,7 +11,7 @@ const knex = {
     tableName: 'knex_migrations',
   },
   seeds: {
-    run: Boolean(process.env.SEED_ON_DEPLOY),
+    run: process.env.SEED_ON_DEPLOY,
     directory: `${__dirname}/../objection/seeds`,
   },
   pool: {

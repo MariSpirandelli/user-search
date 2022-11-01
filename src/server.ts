@@ -26,7 +26,7 @@ process.on('SIGUSR2', exitSignalHandler);
 
 logger.info('[STARTING] Server process at UTC:', new Date());
 
-objection.connect(config.knex.seeds.run).then(() => {
+objection.connect(config.knex.seeds.run === 'true').then(() => {
   const app = api();
 
   app.listen(config.port, () => {
