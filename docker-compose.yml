@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+#api
+  api:
+    container_name: usersearch_api
+    restart: always
+    build: .
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - db
+    volumes:
+    - .:/usr/src/app
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+
+#database
+  db:
+    container_name: usersearch_db
+    image: postgres:15.0
+    restart: always
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/dev:/var/lib/postgresql/data
+    command: postgres -D /run/pgsql-15-data -F -c logging_collector=on
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: usersearch
+      PGDATA: /run/pgsql-15-data
+      LOGGING_COLLECTOR: 'on'
+
+volumes: 
+ data: {}
