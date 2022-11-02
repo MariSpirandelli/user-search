@@ -20,9 +20,15 @@ const knex = {
   },
 };
 
+const redis = {
+  url: process.env.REDIS_URL,
+  cacheTime: +process.env.REDIS_CACHE_TIME
+}
+
 const port = +process.env.PORT || 3000;
 
 export default {
   knex,
   port,
+  redis
 };
