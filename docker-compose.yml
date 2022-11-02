@@ -9,10 +9,13 @@ services:
       - ${PORT}:${PORT}
     depends_on:
       - db
+      - cache
     volumes:
     - .:/usr/src/app
     environment:
       - DATABASE_URL=postgresql://user:password@db:5432/usersearch?schema=public
+      - REDIS_HOST=cache
+      - REDIS_PORT=6379
 
 #database
   db:
@@ -37,6 +40,15 @@ services:
       POSTGRES_DB: usersearch
       PGDATA: /run/pgsql-15-data
       LOGGING_COLLECTOR: 'on'
+
+# required by the queue system bull
+  cache:
+    image: redis:7.0-alpine
+    restart: always
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - '6379:6379'
 
 volumes: 
  data: {}
