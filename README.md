@@ -7,7 +7,7 @@ It's an API built using [NodeJS](https://nodejs.org/en/about/) and [Express](htt
 - [Getting started](#getting-started)
   - [Running seeds](#running-seeds)
 - [Accessing the database](#accessing-the-database)
-- [Available APIs](#available-apis)
+- [Available services](#available-services)
 - [Examples](#examples)
 
 ## 
@@ -48,7 +48,7 @@ npx ts-node src/scripts/runSeed.ts
 
 Using your database IDE of preference, use the database url located at `.env` the database should be exposed and accessible.
 
-### Available APIs
+### Available services
 
 #### #1 Get user by id
 
