@@ -2,11 +2,15 @@
 
 It's an API built using [NodeJS](https://nodejs.org/en/about/) and [Express](https://expressjs.com/) to search over a list of users with pagination and filters over Postgres database with caching for a higher performance through Redis.
 
+## Contents
+
 - [Getting started](#getting-started)
   - [Running seeds](#running-seeds)
 - [Accessing the database](#accessing-the-database)
 - [Available APIs](#available-apis)
 - [Examples](#examples)
+
+## 
 
 ### Getting started
 
@@ -89,4 +93,10 @@ Query Parameters (optional):
 
 ```bash
 /api/users/?size=10
+```
+
+#### #4 - Load user whose id is 200
+
+```bash
+/api/users/200
 ```
