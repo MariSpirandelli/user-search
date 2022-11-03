@@ -17,6 +17,10 @@ router.get(
     let search = req.query.search as string;
     const type = req.query.type as UserType;
 
+    if (page < 0 || pageSize < 0) {
+      throw new BadRequestError('Invalid parameters!');
+    }
+
     // specifying max results to avoid performance issues
     if (pageSize > 100) {
       pageSize = 100;
