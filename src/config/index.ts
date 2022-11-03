@@ -5,9 +5,12 @@ dotenv.config({ path: `${__dirname}/../../${process.env.NODE_ENV}.env` });
 
 const knex = {
   client: 'postgresql',
-  connection:
-    process.env.DATABASE_URL ||
-    'postgresql://user:password@db:5432/usersearch?schema=public',
+  connection: {
+    connectionString:
+      process.env.DATABASE_URL ||
+      'postgresql://user:password@db:5432/usersearch?schema=public',
+    ssl: { rejectUnauthorized: false },
+  },
   migrations: {
     directory: `${__dirname}/../objection/migrations`,
     tableName: 'knex_migrations',
