@@ -1,4 +1,4 @@
-import { SocialLink, UserType } from '../../types/user';
+import { UserType } from '../../types/user';
 import BaseModel from './baseModel';
 
 export class User extends BaseModel {
@@ -6,7 +6,6 @@ export class User extends BaseModel {
   name: string;
   username: string;
   email: string;
-  socialLinks?: SocialLink[];
   bio?: string;
   avatar?: string;
 
