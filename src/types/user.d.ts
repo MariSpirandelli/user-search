@@ -13,4 +13,3 @@ declare type UserFilter = {
   search: string;
   type: UserType;
 };
-

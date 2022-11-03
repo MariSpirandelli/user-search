@@ -21,16 +21,17 @@ exports.seed = async (knex: Knex): Promise<any> => {
         created_at: new Date().toISOString(),
       });
     });
-  
+
     try {
-      await knex('users')
-          .insert(usersRows)
-          .returning('id');
-  
+      await knex('users').insert(usersRows).returning('id');
+
       savedRows += amountToExecuteInParallel;
     } catch (error) {
       // tslint:disable-next-line: no-console
-      console.log(`[ERROR]: Error while seeding database due to `, error.message)
+      console.log(
+        `[ERROR]: Error while seeding database due to `,
+        error.message
+      );
     }
   }
 };

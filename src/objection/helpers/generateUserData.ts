@@ -192,7 +192,7 @@ const firstName = [
   'Lucimar',
   'Janaina',
   'Teresa',
-  'Dandara'
+  'Dandara',
 ];
 
 const surnames = [
@@ -805,9 +805,11 @@ export const generateUserData = () => {
   const type = userType[getRandomIndex(userType.length)];
   const bio = bios[getRandomIndex(bios.length)];
 
-  const username = `${firstName[randomFirstName].toLowerCase()}_${getRandomIndex(1000)}_${
-    surnames[randomSurname].toLowerCase()
-  }_${getRandomIndex(1000000)}`;
+  const username = `${firstName[
+    randomFirstName
+  ].toLowerCase()}_${getRandomIndex(1000)}_${surnames[
+    randomSurname
+  ].toLowerCase()}_${getRandomIndex(1000000)}`;
 
   const email = `${username}${mailHost[getRandomIndex(mailHost.length)]}`;
 

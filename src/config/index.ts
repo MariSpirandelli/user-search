@@ -5,7 +5,9 @@ dotenv.config({ path: `${__dirname}/../../${process.env.NODE_ENV}.env` });
 
 const knex = {
   client: 'postgresql',
-  connection: process.env.DATABASE_URL || 'postgresql://user:password@db:5432/usersearch?schema=public',
+  connection:
+    process.env.DATABASE_URL ||
+    'postgresql://user:password@db:5432/usersearch?schema=public',
   migrations: {
     directory: `${__dirname}/../objection/migrations`,
     tableName: 'knex_migrations',
@@ -22,13 +24,13 @@ const knex = {
 
 const redis = {
   url: process.env.REDIS_URL,
-  cacheTime: +process.env.REDIS_CACHE_TIME
-}
+  cacheTime: +process.env.REDIS_CACHE_TIME,
+};
 
 const port = +process.env.PORT || 3000;
 
 export default {
   knex,
   port,
-  redis
+  redis,
 };

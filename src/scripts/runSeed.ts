@@ -19,7 +19,7 @@ async function start() {
   dbLogger.info('Running knex seeds...');
   await knexConnection.seed.run(config.knex.seeds);
   dbLogger.info('Done running knex seeds.');
-  
+
   await disconnect();
   dbLogger.info('DB disconnected');
 }
