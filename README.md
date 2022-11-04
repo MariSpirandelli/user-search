@@ -9,6 +9,7 @@ It's an API built using [NodeJS](https://nodejs.org/en/about/) and [Express](htt
 - [Accessing the database](#accessing-the-database)
 - [Available services](#available-services)
 - [Examples](#examples)
+- [Try yourself](#try-yourself)
 
 ## 
 
@@ -100,3 +101,6 @@ Query Parameters (optional):
 ```bash
 /api/users/200
 ```
+## Try yourself
+
+There is a live app for testing [here](https://usersearch.herokuapp.com/api/users/?page=0&size=100)
