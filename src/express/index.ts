@@ -17,6 +17,11 @@ export default function api() {
     })
   );
 
+  /**
+   * https://helmetjs.github.io/
+   * middleware that set security-related HTTP response headers
+   * to help to protect your app from some well-known web vulnerabilities
+   */
   app.use(helmet());
   app.use(requestLogger());
 

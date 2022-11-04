@@ -2,6 +2,11 @@ import bunyan from 'bunyan';
 import { NextFunction, Request, Response } from 'express';
 import onHeaders from 'on-headers';
 
+/**
+ * Execute a listener when a response is about to write headers.
+ * The listener is passed the response object as it's context (this). Headers are
+ * considered to be emitted only once, right before they are sent to the client.
+ */
 export default function requestLogger() {
   const log = bunyan.createLogger({ name: 'requests' });
 
